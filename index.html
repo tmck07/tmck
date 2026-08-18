@@ -19,6 +19,8 @@
 
 <body>
 
+  <!--1st Test Pixel Script right below -->
+
   <script>
   // Test pixel simulator - mimics tracking pixel behavior for consent QA
   console.log('[TEST PIXEL] Attempting to fire...');
@@ -34,6 +36,25 @@
   
   console.log('[TEST PIXEL] Fired at:', new Date().toISOString());
 </script>
+
+<!-- Second test pixel script below-->
+  <script>
+  // Demo Pixel #2 - illustrates default-allow behavior in Permissive mode
+  // for UNCLASSIFIED scripts (not yet triggering the bug scenario)
+  console.log('[DEMO PIXEL - UNCLASSIFIED] Attempting to fire...');
+
+  // Simulates a marketing/analytics-style cookie
+  document.cookie = "demo_pixel_unclassified=xyz789; path=/; max-age=2592000";
+
+  // Simulates outbound tracking call (use your own webhook.site URL)
+  fetch("https://webhook.site/your-second-unique-id", {
+    method: "GET",
+    mode: "no-cors"
+  });
+
+  console.log('[DEMO PIXEL - UNCLASSIFIED] Fired at:', new Date().toISOString());
+</script>
+
 
 <header class="hero">
   <h1>Hello, I'm TaCianna</h1>
