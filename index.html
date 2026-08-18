@@ -29,7 +29,7 @@
   document.cookie = "test_pixel_id=abc123; path=/; max-age=2592000";
   
   // Simulates outbound tracking request (use a real endpoint you control or a request bin)
-  fetch("https://webhook.site/your-unique-id", { 
+  fetch("https://webhook.site/4713a29f-63f8-4fed-b7f4-a3ca7c36dcf2", { 
     method: "GET", 
     mode: "no-cors" 
   });
@@ -47,7 +47,7 @@
   document.cookie = "demo_pixel_unclassified=xyz789; path=/; max-age=2592000";
 
   // Simulates outbound tracking call (use your own webhook.site URL)
-  fetch("https://webhook.site/your-second-unique-id", {
+  fetch("https://webhook.site/2e543d6d-f90e-4d7a-9150-465f7ad1fd0f", {
     method: "GET",
     mode: "no-cors"
   });
